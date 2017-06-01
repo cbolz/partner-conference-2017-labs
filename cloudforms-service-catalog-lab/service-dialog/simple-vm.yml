@@ -18,7 +18,7 @@
       display_method_options: 
       position: 0
       dialog_fields:
-      - name: option_0_vmname
+      - name: vm_name
         description: Specify the name of the new virtual machine
         data_type: string
         notes: 
@@ -56,7 +56,7 @@
           ae_instance: 
           ae_message: 
           ae_attributes: {}
-      - name: option_0_memory
+      - name: option_0_vm_memory
         description: Select how much memory the VM should have
         data_type: string
         notes: 
