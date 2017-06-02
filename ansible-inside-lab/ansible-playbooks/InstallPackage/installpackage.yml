@@ -2,6 +2,9 @@
 - name: Install Package
   hosts: all
 
+  vars: 
+  - package_name: none
+
   tasks:
 
   - name: install package
