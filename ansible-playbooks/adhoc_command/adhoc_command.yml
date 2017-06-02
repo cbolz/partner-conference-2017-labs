@@ -1,0 +1,9 @@
+—-
+# Run a command on a node
+- hosts: all-servers
+  remote_user: root
+  sudo: no
+  tasks:
+  - name: run this command and ignore the result
+    shell: exec {{command}} > /tmp/ansible-exec-command.log 2>&1
+
