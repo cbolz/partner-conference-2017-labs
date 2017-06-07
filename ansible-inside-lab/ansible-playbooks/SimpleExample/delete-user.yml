@@ -22,6 +22,8 @@
         return_content: yes
       register: token_output
 
+    - debug: var=token_output
+
     - set_fact: user_href="{{ token_output.json.resources[0].href }}"
 
     - name: Call to CloudForms to delete the user example1 by href
@@ -34,7 +36,7 @@
            Content-Type: "application/json"
         HEADER_Content-Type: "application/json"
         body_format: json
-        body: 
+        body:
           action: 'delete'
         return_content: yes
       register: token_output
