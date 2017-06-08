@@ -46,11 +46,6 @@
           memory_mb: 512
           num_cpus: 1
           scsi: paravirtual
-        networks:
-        - name: VM Network
-          ip: 192.168.1.100
-          netmask: 255.255.255.0
-          mac: 'aa:bb:dd:aa:00:14'
         template: "{{ template }}"
         wait_for_ip_address: no
       delegate_to: localhost
