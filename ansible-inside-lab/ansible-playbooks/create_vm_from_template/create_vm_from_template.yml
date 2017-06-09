@@ -16,6 +16,7 @@
     - debug: var=manageiq.api_url
     - debug: var=manageiq.api_token
     - debug: var=manageiq.service
+    - debug: var=vmname
 
     - name: Set the Provider URL
       set_fact:
@@ -31,7 +32,7 @@
       vsphere_guest:
         validate_certs: no
         vcenter_hostname: "{{ vcenter_hostname }}"
-        guest: "{{ inventory_hostname }}"
+        guest: "{{ vmname }}"
         power_on_after_clone: no
         from_template: yes
         template_src: "{{ template }}"
@@ -43,7 +44,7 @@
       vsphere_guest:
         validate_certs: no
         vcenter_hostname: "{{ vcenter_hostname }}"
-        guest: "{{ inventory_hostname }}"
+        guest: "{{ vmname }}"
         vmware_guest_facts: yes
       register: new_vm
 
