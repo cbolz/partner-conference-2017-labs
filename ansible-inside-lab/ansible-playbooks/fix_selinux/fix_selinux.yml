@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: yes
+  become_user: root
+
+  tasks:
+  - name: set SELinux to enforcing
+    lineinfile:
+      path: /etc/sysconfig/selinux
+      regexp: '^SELINUX='
+      line: 'SELINUX=enforcing'
